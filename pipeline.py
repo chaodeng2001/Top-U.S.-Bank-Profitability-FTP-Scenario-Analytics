@@ -1,10 +1,4 @@
 """Build public bank profitability, FTP, and scenario-model CSV files.
-
-This file is intentionally written as one end-to-end pipeline so it is easy to
-run from PowerShell:
-
-    python .\src\pipeline.py
-
 How to read the code:
 1. Configuration dictionaries define the bank universe, SEC metrics, FRED
    series, and scenario assumptions.
