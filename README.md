@@ -1,82 +1,151 @@
-# Top-U.S.-Bank-Profitability-FTP-Scenario-Analytics
+Top U.S. Bank Profitability, FTP & Scenario Analytics
+This project compares major U.S. banks using public financial statement data, market-rate data, and a modeled scenario layer. It was built as a finance analytics portfolio project with three goals:
 
-Python data pipeline for a Power BI portfolio project comparing major U.S. banks and building a clearly labeled profitability, Funds Transfer Pricing, and scenario dataset calibrated from public data.
+Pull real public bank financial data from SEC EDGAR.
+Combine it with FRED interest-rate and macroeconomic data.
+Build a public-data-calibrated profitability, FTP, and stress-scenario model for Power BI analysis.
+The project is designed to answer practical banking questions:
 
-Target banks:
+Which banks performed best on ROA, ROE, net income, and efficiency ratio?
+Which banks show stronger expense discipline?
+How much modeled profitability comes from loan spreads versus deposit funding value?
+Which banks are most sensitive to rate shocks and credit stress?
+Key Takeaways
+The final report and Power BI dashboard focus on six U.S. banks: JPMorgan Chase, Bank of America, Wells Fargo, Citigroup, U.S. Bancorp, and Capital One.
 
-- JPM
-- BAC
-- WFC
-- C
-- USB
-- PNC
-- TFC
-- COF
+JPMorgan Chase leads most scale-based measures, including cumulative net income, ROE, and total modeled FTP profitability.
+Citigroup performs best on a size-adjusted FTP basis, with the highest FTP net spread income relative to loans.
+Capital One has the highest ROA and the most stable modeled net income across the scenario cases.
+Wells Fargo and U.S. Bancorp show the largest modeled earnings declines under Credit Stress.
+Credit stress is more damaging than rate movement alone because higher provisions directly reduce earnings.
+These findings are model outputs based on public data. They are not internal bank forecasts, regulatory stress-test results, or investment recommendations.
 
+Data Sources
+The pipeline uses public data only.
 
-```
+SEC EDGAR
 
-The default setup uses `SOFR` as the short-term funding-rate anchor and `DGS2` as the asset-transfer-rate anchor.
+SEC Company Facts API
+Bank-level XBRL financial statement fields
+Filing metadata for traceability, including form type, filing date, accession number, and XBRL concept
+FRED
 
-## Real Data vs. Modeled Scenario Data
+SOFR
+Effective Federal Funds Rate
+Bank Prime Loan Rate
+Treasury 3-Month, 2-Year, and 10-Year rates
+CPI
+Unemployment rate
+GDP
+Commercial bank deposits
+Loans and leases in bank credit
+Delinquency rate on all loans
+Real Data vs. Modeled Data
+This distinction is important.
 
-The files `bank_financials_real_long.csv`, `bank_financials_real_wide.csv`, `bank_ratios_real.csv`, `market_rates.csv`, and `macro_indicators.csv` are built from public sources:
+The historical files are real public data from SEC EDGAR and FRED:
 
-- SEC EDGAR Company Facts API
-- FRED series pages and CSV downloads
+bank_financials_real_long.csv
+bank_financials_real_wide.csv
+bank_ratios_real.csv
+market_rates.csv
+macro_indicators.csv
+The scenario file is modeled data:
 
-The file `bank_scenario_model.csv` is not actual internal bank data. It is modeled scenario data calibrated from public EDGAR and FRED baselines. Every row includes:
+bank_scenario_model.csv
+The scenario model is calibrated from public SEC and FRED data, but it is not actual internal bank data. Every modeled row is labeled as:
 
-- `data_type = modeled_scenario_calibrated_from_public_data`
-- `scenario_data_label = MODELED/SCENARIO DATA - calibrated from public SEC EDGAR and FRED data; not actual internal bank data`
+MODELED/SCENARIO DATA - calibrated from public SEC EDGAR and FRED data; not actual internal bank data
 
-Use that label prominently in Power BI.
+Methodology
+The pipeline starts by downloading SEC Company Facts data for the target banks. It extracts financial statement fields such as net income, interest income, interest expense, noninterest income, noninterest expense, total assets, deposits, loans, equity, and selected capital fields where available.
 
-## Financial Modeling / FTP Layer
+The SEC data is then organized in two ways:
 
-This project now includes **FTP as Funds Transfer Pricing**, not File Transfer Protocol.
+A long table for source traceability and XBRL lineage.
+A wide table for financial ratios and Power BI measures.
+Historical ratios are calculated directly from public SEC fields:
 
-The scenario model includes an industry-style internal profitability layer:
+ROA = annualized net income / total assets
+ROE = annualized net income / total equity
+Efficiency ratio = noninterest expense / operating revenue
+Expense/assets = annualized noninterest expense / total assets
+Funding cost = annualized interest expense / deposits
+Loan yield = annualized interest income / loans
+The scenario model starts from each bank's latest public SEC baseline and applies scenario assumptions for balance sheet growth, rate shocks, deposit beta, loan yield beta, expense growth, credit loss rate, and capital ratio.
 
-- `ftp_asset_transfer_rate`
-- `ftp_deposit_crediting_rate`
-- `ftp_loan_charge`
-- `ftp_deposit_credit`
-- `ftp_customer_loan_spread`
-- `ftp_deposit_spread`
-- `ftp_loan_spread_income`
-- `ftp_deposit_spread_income`
-- `ftp_net_spread_income`
-- `ftp_adjusted_net_interest_income`
+FTP Modeling
+FTP means Funds Transfer Pricing in this project.
 
-In banking terms, FTP helps separate customer profitability from interest-rate and funding-center effects:
+Because banks do not publicly disclose their internal FTP curves, this project creates a public-data-based FTP estimate. The model assigns:
 
-- Loans receive an internal FTP funding charge.
-- Deposits receive an internal FTP funding credit.
-- Loan spread income shows how much loan yield exceeds the internal transfer rate.
-- Deposit spread income shows how much deposit funding value exceeds the customer funding cost.
+An internal funding charge to loans.
+An internal funding credit to deposits.
+This separates modeled profitability into loan spread income and deposit funding value.
 
-The FTP rates are modeled from public FRED rate proxies, primarily SOFR and Treasury 2Y, and calibrated to each bank's public EDGAR baseline. This makes the project more directly related to bank financial modeling.
+Core FTP fields include:
 
-## Data Sources
+ftp_asset_transfer_rate
+ftp_deposit_crediting_rate
+ftp_loan_charge
+ftp_deposit_credit
+ftp_loan_spread_income
+ftp_deposit_spread_income
+ftp_net_spread_income
+ftp_adjusted_net_interest_income
+The default FTP setup uses:
 
-SEC:
+SOFR as the short-term funding-rate anchor.
+2-Year Treasury as the asset-transfer-rate anchor.
+Scenario Design
+The model includes four scenarios.
 
-- Company tickers: `https://www.sec.gov/files/company_tickers.json`
-- Company facts: `https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json`
+Scenario	Rate Shock	Deposit Beta	Loan Yield Beta	Expense Growth	Credit Loss Rate	Capital Ratio
+Base	0 bp	0.35	0.55	3.00%	0.60%	9.50%
+Rate Up 100bp	+100 bp	0.45	0.65	3.30%	0.70%	10.00%
+Rate Down 100bp	-100 bp	0.25	0.45	2.80%	0.60%	9.50%
+Credit Stress	+50 bp	0.50	0.50	4.50%	1.80%	11.00%
+Modeled net income is calculated as:
 
-FRED:
+Modeled Net Income =
+(Modeled Net Interest Income
+ + Modeled Noninterest Income
+ - Modeled Noninterest Expense
+ - Modeled Provision)
+* (1 - Tax Rate)
+The model uses a 21% tax rate.
 
-- SOFR: `SOFR`
-- Effective Fed Funds Rate: `DFF`
-- Bank Prime Loan Rate: `DPRIME`
-- Treasury 3M: `DGS3MO`
-- Treasury 2Y: `DGS2`
-- Treasury 10Y: `DGS10`
-- CPI: `CPIAUCSL`
-- Unemployment rate: `UNRATE`
-- GDP: `GDP`
-- Commercial bank deposits: `DPSACBW027SBOG`
-- Loans and leases in bank credit: `TOTLL`
-- Delinquency rate on all loans: `DRALACBN`
+Output Files
+Cleaned Power BI-ready outputs are written to data/cleaned/.
 
+File	Purpose
+bank_financials_real_long.csv	SEC financial statement data in long format with XBRL lineage
+bank_financials_real_wide.csv	SEC bank-quarter table for calculations
+bank_ratios_real.csv	Historical profitability, funding, capital, and efficiency ratios
+market_rates.csv	FRED market-rate observations
+macro_indicators.csv	FRED macroeconomic indicators
+bank_scenario_model.csv	Modeled bank-scenario-quarter profitability dataset
+scenario_assumptions.csv	Scenario inputs and assumptions
+data_dictionary.csv	Field definitions
+validation_summary.csv	Data quality and validation checks
+dim_bank.csv	Bank dimension table
+dim_metric.csv	Metric dimension table
+dim_quarter.csv	Quarter dimension table
+dim_scenario.csv	Scenario dimension table
+dim_rate_series.csv	Rate series dimension table
+Raw files are saved separately:
+
+data/raw/sec/
+data/raw/fred/
+Current Data Coverage
+Latest generated output:
+
+Dataset	Rows	Coverage
+SEC financials long	2,402	2018Q2 to 2026Q1
+SEC financials wide	255	2018Q2 to 2026Q1
+SEC ratios	255	2018Q2 to 2026Q1
+Market rates	13,121	2018Q2 to 2026Q2
+Macro indicators	1,095	2018Q2 to 2026Q2
+Scenario model	256	2026Q1 to 2028Q1
+Scenario assumptions	4	Four scenarios
+The written report uses 2018-2025 for the main historical comparison to avoid mixing full-year results with partial 2026 data.
