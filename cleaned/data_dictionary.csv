@@ -1,0 +1,201 @@
+file_name,column_name,data_type,definition
+bank_financials_real_long.csv,bank_name,object,SEC company title from company_tickers.json.
+bank_financials_real_long.csv,bank_ticker,object,Public ticker symbol for the bank holding company.
+bank_financials_real_long.csv,cik,object,"SEC Central Index Key, zero-padded to 10 digits."
+bank_financials_real_long.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+bank_financials_real_long.csv,metric,object,Normalized metric name used by the pipeline.
+bank_financials_real_long.csv,metric_label,object,Human-readable metric label.
+bank_financials_real_long.csv,period,object,Calendar quarter in YYYYQ# format.
+bank_financials_real_long.csv,period_end,object,Calendar quarter end date.
+bank_financials_real_long.csv,period_sort,int64,Numeric helper used to sort period labels chronologically in Power BI.
+bank_financials_real_long.csv,period_source,object,Whether the quarter was directly reported or Q4 was derived from FY less Q1-Q3.
+bank_financials_real_long.csv,source_accession,object,SEC accession number for the selected fact.
+bank_financials_real_long.csv,source_concept,object,XBRL concept used to populate the metric.
+bank_financials_real_long.csv,source_filed,object,SEC filing date for the selected fact.
+bank_financials_real_long.csv,source_form,object,SEC form used by the selected fact.
+bank_financials_real_long.csv,source_frame,object,SEC XBRL frame used for the selected fact.
+bank_financials_real_long.csv,source_namespace,object,XBRL taxonomy namespace.
+bank_financials_real_long.csv,unit,object,SEC or FRED unit of measure.
+bank_financials_real_long.csv,value,float64,Metric value as reported or derived from public filings.
+bank_financials_real_wide.csv,bank_name,object,SEC company title from company_tickers.json.
+bank_financials_real_wide.csv,bank_ticker,object,Public ticker symbol for the bank holding company.
+bank_financials_real_wide.csv,cik,object,"SEC Central Index Key, zero-padded to 10 digits."
+bank_financials_real_wide.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+bank_financials_real_wide.csv,interest_expense,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,interest_expense_deposits,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,interest_expense_deposits_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,interest_expense_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,interest_income,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,interest_income_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,net_income,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,net_income_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,noninterest_expense,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,noninterest_expense_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,noninterest_income,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,noninterest_income_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,period,object,Calendar quarter in YYYYQ# format.
+bank_financials_real_wide.csv,period_end,object,Calendar quarter end date.
+bank_financials_real_wide.csv,period_sort,int64,Numeric helper used to sort period labels chronologically in Power BI.
+bank_financials_real_wide.csv,tier_1_capital,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,tier_1_capital_ratio,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,tier_1_capital_ratio_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,tier_1_capital_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_assets,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_assets_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_deposits,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_deposits_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_equity,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_equity_source_concept,object,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_loans,float64,Pipeline output field used for analysis or validation.
+bank_financials_real_wide.csv,total_loans_source_concept,object,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,bank_name,object,SEC company title from company_tickers.json.
+bank_ratios_real.csv,bank_ticker,object,Public ticker symbol for the bank holding company.
+bank_ratios_real.csv,cik,object,"SEC Central Index Key, zero-padded to 10 digits."
+bank_ratios_real.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+bank_ratios_real.csv,deposit_interest_expense_to_deposits_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,deposits_to_assets,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,efficiency_ratio,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,equity_to_assets,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,interest_expense_to_deposits_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,loan_yield_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,loans_to_deposits,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,net_income_to_assets_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,net_interest_margin_proxy,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,noninterest_expense_to_assets_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,noninterest_income_to_assets_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,period,object,Calendar quarter in YYYYQ# format.
+bank_ratios_real.csv,period_end,object,Calendar quarter end date.
+bank_ratios_real.csv,period_sort,int64,Numeric helper used to sort period labels chronologically in Power BI.
+bank_ratios_real.csv,roa_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,roe_annualized,float64,Pipeline output field used for analysis or validation.
+bank_ratios_real.csv,tier_1_capital_ratio,float64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,bank_name,object,SEC company title from company_tickers.json.
+bank_scenario_model.csv,bank_ticker,object,Public ticker symbol for the bank holding company.
+bank_scenario_model.csv,baseline_period,object,Latest bank public-data quarter used as the model anchor.
+bank_scenario_model.csv,baseline_period_end,object,End date of the baseline public-data quarter.
+bank_scenario_model.csv,capital_ratio_assumption,float64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,cik,object,"SEC Central Index Key, zero-padded to 10 digits."
+bank_scenario_model.csv,credit_loss_rate_annual,float64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+bank_scenario_model.csv,deposit_beta,float64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,expense_growth_annual,float64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,forecast_quarter,int64,Sequential forecast quarter number after the bank baseline period.
+bank_scenario_model.csv,ftp_adjusted_net_interest_income,float64,Modeled NII recast through FTP spread attribution and public-rate curve proxies.
+bank_scenario_model.csv,ftp_asset_transfer_rate,float64,Modeled annualized FTP charge rate assigned to loan assets using Treasury 2Y and rate-shock proxies.
+bank_scenario_model.csv,ftp_customer_loan_spread,float64,Modeled customer loan yield less FTP asset transfer rate.
+bank_scenario_model.csv,ftp_deposit_credit,float64,Quarterly internal FTP funding credit allocated to modeled deposit portfolio.
+bank_scenario_model.csv,ftp_deposit_crediting_rate,float64,Modeled annualized FTP credit rate assigned to deposit funding using SOFR and rate-shock proxies.
+bank_scenario_model.csv,ftp_deposit_spread,float64,Modeled FTP deposit crediting rate less modeled customer funding cost.
+bank_scenario_model.csv,ftp_deposit_spread_income,float64,Internal FTP deposit credit less customer deposit interest expense.
+bank_scenario_model.csv,ftp_loan_charge,float64,Quarterly internal FTP funding charge allocated to modeled loan portfolio.
+bank_scenario_model.csv,ftp_loan_spread_income,float64,Customer loan interest income less internal FTP loan charge.
+bank_scenario_model.csv,ftp_methodology,object,Short description of modeled FTP approach used for scenario rows.
+bank_scenario_model.csv,ftp_net_spread_income,float64,FTP-attributed spread income from lending plus deposits.
+bank_scenario_model.csv,loan_yield_beta,float64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,model_version,object,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,modeled_assets,float64,Modeled total asset base for the scenario quarter.
+bank_scenario_model.csv,modeled_capital_ratio,float64,Modeled equity/capital base divided by modeled assets.
+bank_scenario_model.csv,modeled_deposit_portfolio,float64,Modeled deposit portfolio balance calibrated from public deposits/assets history.
+bank_scenario_model.csv,modeled_efficiency_ratio,float64,Modeled noninterest expense divided by modeled revenue.
+bank_scenario_model.csv,modeled_equity_capital_base,float64,Modeled equity or capital base.
+bank_scenario_model.csv,modeled_funding_cost,float64,Annualized modeled funding cost as a decimal.
+bank_scenario_model.csv,modeled_funding_gap,float64,Modeled loans less modeled deposits.
+bank_scenario_model.csv,modeled_funding_gap_to_assets,float64,Modeled funding gap divided by modeled assets.
+bank_scenario_model.csv,modeled_loan_portfolio,float64,Modeled loan portfolio balance calibrated from public loan/deposit history.
+bank_scenario_model.csv,modeled_loan_yield,float64,Annualized modeled loan yield as a decimal.
+bank_scenario_model.csv,modeled_net_income,float64,Modeled quarterly net income after tax assumption.
+bank_scenario_model.csv,modeled_net_interest_income,float64,Modeled quarterly net interest income.
+bank_scenario_model.csv,modeled_noninterest_expense,float64,Modeled quarterly noninterest expense.
+bank_scenario_model.csv,modeled_noninterest_income,float64,Modeled quarterly noninterest income.
+bank_scenario_model.csv,modeled_provision_credit_loss,float64,Modeled quarterly provision or credit loss assumption.
+bank_scenario_model.csv,modeled_rate_sensitivity,float64,Estimated quarterly net-interest-income dollar sensitivity to a 100 bp rate shock.
+bank_scenario_model.csv,modeled_roa,float64,Annualized modeled return on assets.
+bank_scenario_model.csv,modeled_roe,float64,Annualized modeled return on equity.
+bank_scenario_model.csv,period,object,Calendar quarter in YYYYQ# format.
+bank_scenario_model.csv,period_end,object,Calendar quarter end date.
+bank_scenario_model.csv,period_sort,int64,Numeric helper used to sort period labels chronologically in Power BI.
+bank_scenario_model.csv,rate_shock_bps,int64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,scenario_data_label,object,"Explicit label that scenario rows are modeled, not actual internal bank data."
+bank_scenario_model.csv,scenario_name,object,Scenario case name.
+bank_scenario_model.csv,scenario_short_rate,float64,Pipeline output field used for analysis or validation.
+bank_scenario_model.csv,source_rate_series,object,Pipeline output field used for analysis or validation.
+dim_bank.csv,bank_name,object,SEC company title from company_tickers.json.
+dim_bank.csv,bank_sort_order,int64,Display sort order for the target bank peer group.
+dim_bank.csv,bank_ticker,object,Public ticker symbol for the bank holding company.
+dim_bank.csv,cik,object,"SEC Central Index Key, zero-padded to 10 digits."
+dim_metric.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+dim_metric.csv,financial_statement_area,object,Financial statement or analytical area for a metric.
+dim_metric.csv,metric,object,Normalized metric name used by the pipeline.
+dim_metric.csv,metric_group,object,Business grouping for financial metrics.
+dim_metric.csv,metric_label,object,Human-readable metric label.
+dim_metric.csv,metric_sort_order,int64,Display sort order for normalized financial metrics.
+dim_metric.csv,power_bi_format,object,Suggested display format for Power BI visuals.
+dim_metric.csv,unit,object,SEC or FRED unit of measure.
+dim_quarter.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+dim_quarter.csv,period,object,Calendar quarter in YYYYQ# format.
+dim_quarter.csv,period_end,object,Calendar quarter end date.
+dim_quarter.csv,period_start,object,Calendar quarter start date.
+dim_quarter.csv,quarter_label,object,Display label for the calendar quarter.
+dim_quarter.csv,quarter_number,int64,Calendar quarter number from 1 to 4.
+dim_quarter.csv,quarter_sort,int64,Numeric helper used to sort quarter labels chronologically.
+dim_quarter.csv,year,int64,Calendar year from the period field.
+dim_rate_series.csv,category,object,Market rate or macro indicator category.
+dim_rate_series.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+dim_rate_series.csv,frequency,object,Native FRED observation frequency.
+dim_rate_series.csv,indicator,object,FRED indicator name.
+dim_rate_series.csv,rate_series_sort_order,int64,Display sort order for FRED rate series.
+dim_rate_series.csv,series_id,object,FRED series identifier.
+dim_rate_series.csv,source_url,object,Public source URL.
+dim_rate_series.csv,units,object,Pipeline output field used for analysis or validation.
+dim_scenario.csv,capital_ratio,float64,Pipeline output field used for analysis or validation.
+dim_scenario.csv,credit_loss_rate_annual,float64,Pipeline output field used for analysis or validation.
+dim_scenario.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+dim_scenario.csv,deposit_beta,float64,Pipeline output field used for analysis or validation.
+dim_scenario.csv,description,object,Pipeline output field used for analysis or validation.
+dim_scenario.csv,expense_growth_annual,float64,Pipeline output field used for analysis or validation.
+dim_scenario.csv,loan_yield_beta,float64,Pipeline output field used for analysis or validation.
+dim_scenario.csv,rate_shock_bps,int64,Pipeline output field used for analysis or validation.
+dim_scenario.csv,scenario_name,object,Scenario case name.
+dim_scenario.csv,scenario_sort_order,int64,Display sort order for scenario names.
+macro_indicators.csv,category,object,Market rate or macro indicator category.
+macro_indicators.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+macro_indicators.csv,date,datetime64[ns],FRED observation date.
+macro_indicators.csv,frequency,object,Native FRED observation frequency.
+macro_indicators.csv,indicator,object,FRED indicator name.
+macro_indicators.csv,period,object,Calendar quarter in YYYYQ# format.
+macro_indicators.csv,period_sort,int64,Numeric helper used to sort period labels chronologically in Power BI.
+macro_indicators.csv,series_id,object,FRED series identifier.
+macro_indicators.csv,source_url,object,Public source URL.
+macro_indicators.csv,units,object,Pipeline output field used for analysis or validation.
+macro_indicators.csv,value,float64,Metric value as reported or derived from public filings.
+market_rates.csv,category,object,Market rate or macro indicator category.
+market_rates.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+market_rates.csv,date,datetime64[ns],FRED observation date.
+market_rates.csv,frequency,object,Native FRED observation frequency.
+market_rates.csv,indicator,object,FRED indicator name.
+market_rates.csv,period,object,Calendar quarter in YYYYQ# format.
+market_rates.csv,period_sort,int64,Numeric helper used to sort period labels chronologically in Power BI.
+market_rates.csv,series_id,object,FRED series identifier.
+market_rates.csv,source_url,object,Public source URL.
+market_rates.csv,units,object,Pipeline output field used for analysis or validation.
+market_rates.csv,value,float64,Metric value as reported or derived from public filings.
+scenario_assumptions.csv,capital_ratio,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,credit_loss_rate_annual,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,data_type,object,"Label distinguishing real public data, ratios, assumptions, and modeled scenario data."
+scenario_assumptions.csv,deposit_beta,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,deposit_growth_annual,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,description,object,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,expense_growth_annual,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,loan_growth_annual,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,loan_yield_beta,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,noninterest_income_growth_annual,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,rate_shock_bps,int64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,rate_shock_decimal,float64,Pipeline output field used for analysis or validation.
+scenario_assumptions.csv,scenario_name,object,Scenario case name.
+scenario_assumptions.csv,tax_rate,float64,Pipeline output field used for analysis or validation.
+validation_summary.csv,affected_rows,int64,Number of rows or cells affected by the validation check.
+validation_summary.csv,check_name,object,Validation check identifier.
+validation_summary.csv,details,object,Human-readable validation result details.
+validation_summary.csv,file_name,object,Pipeline output field used for analysis or validation.
+validation_summary.csv,severity,object,Validation severity.
+validation_summary.csv,status,object,Validation result status.

@@ -1,0 +1,5 @@
+scenario_name,rate_shock_bps,deposit_beta,loan_yield_beta,expense_growth_annual,credit_loss_rate_annual,capital_ratio,description,scenario_sort_order,data_type
+Base,0,0.35,0.55,0.03,0.006,0.095,Base case holds the latest observed short-rate level and applies moderate balance sheet growth.,1,dimension_scenario
+Rate Up 100bp,100,0.45,0.65,0.033,0.007,0.1,Parallel upward short-rate shock with higher deposit pass-through and slightly slower growth.,2,dimension_scenario
+Rate Down 100bp,-100,0.25,0.45,0.028,0.006,0.095,Down-rate case with slower deposit repricing and modestly stronger balance sheet growth.,3,dimension_scenario
+Credit Stress,50,0.5,0.5,0.045,0.018,0.11,"Credit stress case with higher losses, tighter funding, slower revenue, and a higher capital target.",4,dimension_scenario

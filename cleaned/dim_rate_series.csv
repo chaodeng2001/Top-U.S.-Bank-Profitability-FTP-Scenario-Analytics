@@ -1,0 +1,7 @@
+series_id,indicator,category,frequency,units,source_url,rate_series_sort_order,data_type
+SOFR,Secured Overnight Financing Rate,market_rate,Daily,Percent,https://fred.stlouisfed.org/series/SOFR,1,dimension_rate_series
+DFF,Effective Federal Funds Rate,market_rate,Daily,Percent,https://fred.stlouisfed.org/series/DFF,2,dimension_rate_series
+DPRIME,Bank Prime Loan Rate,market_rate,Daily,Percent,https://fred.stlouisfed.org/series/DPRIME,3,dimension_rate_series
+DGS3MO,Treasury 3-Month Constant Maturity,market_rate,Daily,Percent,https://fred.stlouisfed.org/series/DGS3MO,4,dimension_rate_series
+DGS2,Treasury 2-Year Constant Maturity,market_rate,Daily,Percent,https://fred.stlouisfed.org/series/DGS2,5,dimension_rate_series
+DGS10,Treasury 10-Year Constant Maturity,market_rate,Daily,Percent,https://fred.stlouisfed.org/series/DGS10,6,dimension_rate_series

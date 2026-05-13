@@ -1,0 +1,13 @@
+metric,metric_label,unit,metric_group,financial_statement_area,metric_sort_order,power_bi_format,data_type
+net_income,Net income,USD,Profitability,Income statement,10,$ billions,dimension_metric
+interest_income,Interest income,USD,Net interest income,Income statement,20,$ billions,dimension_metric
+interest_expense,Interest expense,USD,Net interest income,Income statement,30,$ billions,dimension_metric
+interest_expense_deposits,Interest expense on deposits,USD,Funding cost,Income statement,40,$ billions,dimension_metric
+noninterest_income,Noninterest income,USD,Fee and other income,Income statement,50,$ billions,dimension_metric
+noninterest_expense,Noninterest expense,USD,Expense efficiency,Income statement,60,$ billions,dimension_metric
+total_assets,Total assets,USD,Balance sheet,Balance sheet,70,$ billions,dimension_metric
+total_deposits,Total deposits,USD,Balance sheet,Balance sheet,80,$ billions,dimension_metric
+total_loans,Total loans,USD,Balance sheet,Balance sheet,90,$ billions,dimension_metric
+total_equity,Total equity,USD,Capital,Balance sheet,100,$ billions,dimension_metric
+tier_1_capital,Tier 1 capital,USD,Capital,Regulatory capital,110,$ billions,dimension_metric
+tier_1_capital_ratio,Tier 1 capital ratio,pure,Capital,Regulatory capital,120,percent,dimension_metric
